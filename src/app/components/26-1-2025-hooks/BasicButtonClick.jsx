@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 
-// if want to update Ui , dom should be rerender( re execute), in react if you want to rerender , the only way is you need to update state variable value , when every state variable values dom will rerender and UPdates UI
+// if want to update Ui , dom should be rerender( re execute), in react, if you want to rerender the Ui , the only way is you need to update state variable value ,==> when every state variable values changes, dom will rerender and UPdates the UI
 
 export const BasicButtonClick = () => {
     const [text, setText] = useState("This is my para graph")
