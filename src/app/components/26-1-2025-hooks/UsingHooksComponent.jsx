@@ -5,28 +5,24 @@ import { useState } from "react"
 export const UsingHooksComponent = () => {
 
     const [customName, setName] = useState("dummy")
-
-
-
-
-    const handleCallback = (event: any) => {
-
+    const handleCallback = (event) => {
         console.log(event, "event")
-
         setName(event.target.value)
+     }
+   
+
+     
 
 
 
-    }
-
-
-
-    return <div>
+ return <div>
         <p> using predefined hooks like useState and call back functions</p>
-        <input type="text" placeholder="enter the name" value={customName} onChange={handleCallback} />
+        <input type="text" id="input" placeholder="enter the name" value={customName} onChange={handleCallback} />
         <p> {` ${2 + 3} +abc  ${customName}`}</p>
     </div>
 
 
 }
+
+
 
