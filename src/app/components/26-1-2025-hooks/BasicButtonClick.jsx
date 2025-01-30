@@ -27,14 +27,16 @@ const fetchingDataFromAPI = async () => {
     catch (error) {
     }
   }
-  // mounting phase
+  // fetchingDataFromAPI()
+
+  //mounting phase
   useEffect(() => {
     fetchingDataFromAPI()
   }, [])
 
 
    // updating phase
-   /useEffect(() => {
+   useEffect(() => {
     console.log(text, "text")
   }, [text, stateList])
 
@@ -43,12 +45,13 @@ const fetchingDataFromAPI = async () => {
     list[index] = list[index] + 1
     setList([...list])
   }
+
+  console.log( todos &&todos,"state varaiable")
   return <div>
     <p>{text}</p>
     <button onClick={handleClick}> This is my button</button>
     {list.map((ele, index) => <p onClick={(e) => handleElementClick(e, index)}>{ele}</p>)}
-    {todos[0].map((ele, index)=>{ 
-        return <p key={index}> {ele.title}</p>
-})}
+    { todos && todos?.map((ele, index)=>{ 
+        return <p key={`${ele?.id}${index}  `}> {ele.title}</p>})}
   </div>
 } 
