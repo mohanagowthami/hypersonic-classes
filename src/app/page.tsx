@@ -7,6 +7,7 @@ import { Header } from "./components/Header"
 import Content from "./components/Content"
 import { UsingHooksComponent } from "./components/26-1-2025-hooks/UsingHooksComponent"
 import {BasicButtonClick} from "./components/26-1-2025-hooks/BasicButtonClick"
+import BasicPropExampleParent from "./components/31-1-2025-props/BasicPropExample"
 
 // default export ( default keyword)
 const Home=()=>{
@@ -15,7 +16,8 @@ const Home=()=>{
       <Header/>
       <Content/>
       <UsingHooksComponent/> */}
-      <BasicButtonClick />
+      {/* <BasicButtonClick /> */}
+      <BasicPropExampleParent/>
     
   </div>
 }

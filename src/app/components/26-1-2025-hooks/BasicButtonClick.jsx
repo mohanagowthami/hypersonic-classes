@@ -55,3 +55,7 @@ const fetchingDataFromAPI = async () => {
         return <p key={`${ele?.id}${index}  `}> {ele.title}</p>})}
   </div>
 } 
+
+
+// object methos entries ,keys,values
+// array methods map, filter, findIndex , find, splice , slice , reduce
