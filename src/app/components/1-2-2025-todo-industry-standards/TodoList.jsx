@@ -1,5 +1,6 @@
 "use client"
-import { AddTodo } from "../1-2-2025-todo-industry-standards/AddTodo"
+import { useState } from "react"
+import { AddTodo } from "./AddTodo"
 
 const TodoList = () => {
     const todos = [{
@@ -10,11 +11,17 @@ const TodoList = () => {
         name: "break fast",
         isCompleted: false
     }]
+    const [todosList, setterFunOfTodosList] = useState(todos)
+
+
+    // const [ ]=useSta
 
 
     const buttonClickFromParent = (value, value2) => {
 
         console.log("button clicked in child and passing from child to parent", value, value2)
+        setterFunOfTodosList([...todosList, { name: value, isCompleted: false }])
+
 
     }
 
@@ -24,7 +31,7 @@ const TodoList = () => {
         <AddTodo title="this is title from parent passing as prop" buttonClickFromParent={(value) => buttonClickFromParent(value, "custom input")} />
 
         {/* <AddTodo  title="this is title from parent passing as prop"  buttonClickFromParent={buttonClickFromParent}/> */}
-        {todos.map((ele, index) => {
+        {todosList.map((ele, index) => {
             return <p>{ele.name}</p>
         })
         }
