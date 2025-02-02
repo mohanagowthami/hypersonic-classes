@@ -28,9 +28,9 @@ const TodoList = () => {
     return <>
         <p>Todo  List</p>
         {/* this is one way to pass value in call back when you want to some extra details , this way will be more usable */}
-        <AddTodo title="this is title from parent passing as prop" buttonClickFromParent={(value) => buttonClickFromParent(value, "custom input")} />
+        {/* <AddTodo title="this is title from parent passing as prop" buttonClickFromParent={(value) => buttonClickFromParent(value, "custom input")} /> */}
 
-        {/* <AddTodo  title="this is title from parent passing as prop"  buttonClickFromParent={buttonClickFromParent}/> */}
+        <AddTodo  title="this is title from parent passing as prop"  buttonClickFromParent={buttonClickFromParent}/>
         {todosList.map((ele, index) => {
             return <p>{ele.name}</p>
         })

@@ -9,6 +9,7 @@ import { UsingHooksComponent } from "./components/26-1-2025-hooks/UsingHooksComp
 import {BasicButtonClick} from "./components/26-1-2025-hooks/BasicButtonClick"
 import BasicPropExampleParent from "./components/31-1-2025-props/BasicPropExample"
 import TodoList from "./components/1-2-2025-todo-industry-standards/TodoList"
+import {SimpleLiftingStateUpParent} from"./components/1-2-2025-todo-industry-standards/SimpleLiftingStateUpExample"
 
 // default export ( default keyword)
 const Home=()=>{
@@ -19,7 +20,8 @@ const Home=()=>{
       <UsingHooksComponent/> */}
       {/* <BasicButtonClick /> */}
       {/* <BasicPropExampleParent/> */}
-      <TodoList/>
+      {/* <TodoList/> */}
+      <SimpleLiftingStateUpParent/>
     
   </div>
 }
