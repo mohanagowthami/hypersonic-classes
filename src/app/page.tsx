@@ -20,8 +20,8 @@ const Home=()=>{
       <UsingHooksComponent/> */}
       {/* <BasicButtonClick /> */}
       {/* <BasicPropExampleParent/> */}
-      {/* <TodoList/> */}
-      <SimpleLiftingStateUpParent/>
+      <TodoList/>
+      {/* <SimpleLiftingStateUpParent/> */}
     
   </div>
 }
