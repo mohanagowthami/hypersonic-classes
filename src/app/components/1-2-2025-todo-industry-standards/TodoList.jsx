@@ -4,14 +4,7 @@ import { AddTodo } from "./AddTodo"
 import { TodoItem } from "./TodoItem"
 
 const TodoList = () => {
-    const todos = [{
-        name: "brushing",
-        isCompleted: true,
-    },
-    {
-        name: "break fast",
-        isCompleted: false
-    }]
+    const todos = []
     const [todosList, setterFunOfTodosList] = useState(todos)
 
 
@@ -58,16 +51,11 @@ const TodoList = () => {
     const handleCompleteTodotaskCB = (index) => {
 
         const todosListCopy = [...todosList]
-        todosListCopy[index]["isCompleted"] = !todosListCopy[index]["isCompleted"]
+        todosListCopy[index]["completed"] = !todosListCopy[index]["completed"]
         setterFunOfTodosList([...todosListCopy])
 
 
     }
-
-
-
-
-
 
     return <>
         <p>Todo  List</p>

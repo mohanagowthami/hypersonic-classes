@@ -16,10 +16,9 @@ export const TodoItem = (props) => {
 
         <p>{todoData.title}</p>
         <div class='todo-item'>
-            {todoData.completed ? <input type="checkbox"  checked={todoData.completed} onChange={handleCompleteTodotaskProp} /> : <input type="checkbox" onChange={handleCompleteTodotaskProp} />
+            <input type="checkbox"  checked={todoData.completed} onChange={handleCompleteTodotaskProp} /> 
 
-
-            }
+            
 
             {todoData.completed ? "done" : "needs to be done"}
 
