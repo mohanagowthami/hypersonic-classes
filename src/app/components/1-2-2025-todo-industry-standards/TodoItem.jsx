@@ -14,10 +14,17 @@ export const TodoItem = (props) => {
 
     return <div className="flex gap-6 items-center justify-center">
 
-        <p>{todoData.name}</p>
-        {todoData.isCompleted ?  <button onClick={handleCompleteTodotaskProp}>make it as not completed</button> :
-            <button onClick={handleCompleteTodotaskProp}>complete todo</button>}
-        <button onClick={handleDeleteButton}>delete</button>
+        <p>{todoData.title}</p>
+        <div class='todo-item'>
+            {todoData.completed ? <input type="checkbox" onChange={handleCompleteTodotaskProp} /> : <input type="checkbox" onChange={handleCompleteTodotaskProp} />
+
+
+            }
+
+            {todoData.completed ? "done" : "needs to be done"}
+
+            <button onClick={handleDeleteButton} className="delete-todoItem">delete</button>
+        </div>
 
     </div>
 }

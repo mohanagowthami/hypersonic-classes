@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AddTodo } from "./AddTodo"
 import { TodoItem } from "./TodoItem"
 
@@ -16,6 +16,25 @@ const TodoList = () => {
 
 
     // const [ ]=useSta
+
+    const fetchData=async()=>{
+
+        let response= await fetch("https://jsonplaceholder.typicode.com/todos")
+        response= await response.json()
+        setterFunOfTodosList(response)
+
+
+        console.log(response,"response")
+
+    }
+
+    // this operation is performed when the componnet is in mounting phase
+    useEffect(()=>{
+    
+        fetchData()
+   
+
+    },[])
 
 
     const buttonClickFromParent = (value, value2) => {
