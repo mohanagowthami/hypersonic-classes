@@ -35,6 +35,21 @@ const TodoList = () => {
         setterFunOfTodosList([...todosListCopy])
     }
 
+
+    const handleCompleteTodotaskCB = (index) => {
+
+        const todosListCopy = [...todosList]
+        todosListCopy[index]["isCompleted"] = !todosListCopy[index]["isCompleted"]
+        setterFunOfTodosList([...todosListCopy])
+
+
+    }
+
+
+
+
+
+
     return <>
         <p>Todo  List</p>
         {/* this is one way to pass value in call back when you want to some extra details , this way will be more usable */}
@@ -42,7 +57,10 @@ const TodoList = () => {
 
         <AddTodo title="this is title from parent passing as prop" buttonClickFromParent={buttonClickFromParent} />
         {todosList.map((ele, index) => {
-            return <TodoItem todoData={ele} key={index} handleDeleteFromParent={() => handleDeleteFromParent(index)} />
+            return <TodoItem todoData={ele} key={index}
+                handleCompleteTodotaskProp={() => handleCompleteTodotaskCB(index)}
+
+                handleDeleteFromParent={() => handleDeleteFromParent(index)} />
         })
         }
     </>
