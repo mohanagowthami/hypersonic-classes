@@ -6,46 +6,44 @@ export const TodoItem = (props) => {
 
     const handleDeleteButton = () => {
         // handleDeleteFromParent()
-       try{
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
-            method: 'DELETE',
-          });
+        try {
+            fetch('https://jsonplaceholder.typicode.com/posts/1', {
+                method: 'DELETE',
+            });
         }
-        catch(error)
-        {
-            console.log(error,"error")
+        catch (error) {
+            console.log(error, "error")
         }
 
     }
 
-    const update= async()=>{
+    const update = async () => {
         // handleCompleteTodotaskProp
-       try{
-    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1",{
+        try {
+            let response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
 
-        method:"PATCH",
-        body:JSON.stringify({
-           
-            title:"nre record",
-            
-        }),
+                method: "PATCH",
+                body: JSON.stringify({
 
-        headers:{
-            "conten-type":"application/json"
+                    title: "nre record",
+
+                }),
+
+                headers: {
+                    "conten-type": "application/json"
+                }
+
+            })
+
+            response = response.json()
+
+
+
+
         }
+        catch (error) {
 
-    })
-
-    response = response.json()
-
-    
-    
-
-       }
-       catch(error)
-       {
-
-       }
+        }
 
 
 
@@ -59,9 +57,9 @@ export const TodoItem = (props) => {
 
         <p>{todoData.title}</p>
         <div class='todo-item'>
-            <input type="checkbox"  checked={todoData.completed} onChange={update} /> 
+            <input type="checkbox" checked={todoData.completed} onChange={update} />
 
-            
+
 
             {todoData.completed ? "done" : "needs to be done"}
 
