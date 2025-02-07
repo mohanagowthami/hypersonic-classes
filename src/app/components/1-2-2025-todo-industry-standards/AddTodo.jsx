@@ -13,9 +13,32 @@ export const AddTodo = (props) => {
 
     }
 
-    const handleButtonClickFromChild = () => {
+    const handleButtonClickFromChild = async() => {
 
-        buttonClickFromParent(todoText)
+        // buttonClickFromParent(todoText)
+
+        try{
+
+        let response= await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+              title: 'hypersonic new record',
+              body: 'bar',
+              userId: 1,
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+         response= await response.json()
+        }
+        catch(error)
+        {
+            console.log(error,"error in post method")
+        }
+         
+
+
 
     }
     return <>

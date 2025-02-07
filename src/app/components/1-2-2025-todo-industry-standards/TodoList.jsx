@@ -3,6 +3,11 @@ import { useEffect, useState } from "react"
 import { AddTodo } from "./AddTodo"
 import { TodoItem } from "./TodoItem"
 
+// useState
+// useEffect
+// lifting state up
+// controlled components of input (form feild)
+
 const TodoList = () => {
     const todos = []
     const [todosList, setterFunOfTodosList] = useState(todos)
@@ -10,32 +15,30 @@ const TodoList = () => {
 
     // const [ ]=useSta
 
-    const fetchData=async()=>{
+    const fetchData = async () => {
 
-        let response= await fetch("https://jsonplaceholder.typicode.com/todos")
-        response= await response.json()
+        let response = await fetch("https://jsonplaceholder.typicode.com/todos")
+        response = await response.json()
         setterFunOfTodosList(response)
 
 
-        console.log(response,"response")
+        console.log(response, "response")
 
     }
 
     // this operation is performed when the componnet is in mounting phase
-    useEffect(()=>{
-    
-        fetchData()
-   
+    useEffect(() => {
 
-    },[])
+        fetchData()
+
+
+    }, [])
 
 
     const buttonClickFromParent = (value, value2) => {
 
         console.log("button clicked in child and passing from child to parent", value, value2)
         setterFunOfTodosList([...todosList, { name: value, isCompleted: false }])
-
-
     }
 
 
